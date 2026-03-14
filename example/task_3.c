@@ -1,6 +1,6 @@
 #include "task_2.h"
 #include "raylib.h"
-q_msg_t gw_task_app2_mailbox;
+q_msg_t gw_task_app3_mailbox;
 
 void* gw_task_app3_entry(void) {
 	wait_all_tasks_started();
