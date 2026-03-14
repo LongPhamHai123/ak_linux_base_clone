@@ -6,6 +6,8 @@ NAME_STATIC_MODULE = libak.a
 # LDFLAGS += -L/mnt/local/lib -Wl,-rpath=/mnt/local/lib
 # LDLIBS += -lak
 
+CFLAGS  += -I$(PREFIX)/include
+
 OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_list.o \
 		$(EXAMPLE_DIR)/task_1.o \
