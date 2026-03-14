@@ -6,7 +6,8 @@ NAME_STATIC_MODULE = libak.a
 OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_list.o \
 		$(EXAMPLE_DIR)/task_1.o \
-		$(EXAMPLE_DIR)/task_2.o 
+		$(EXAMPLE_DIR)/task_2.o  \
+		$(EXAMPLE_DIR)/task_3.o
 
 
 CFLAGS	+= -I/usr/local/include
