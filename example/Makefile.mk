@@ -3,7 +3,8 @@
 NAME_MODULE = $(EXAMPLE_DIR)/example
 NAME_STATIC_MODULE = libak.a
 
-LDFLAGS += -L/mnt/local/lib
+# LDFLAGS += -L/mnt/local/lib
+LDFLAGS += -L/mnt/local/lib -Wl,-rpath=/mnt/local/lib
 LDLIBS += -lak
 
 OBJ += 	$(EXAMPLE_DIR)/main.o \
@@ -20,7 +21,7 @@ $(EXAMPLE_DIR)/%.o: %.c
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ -L/mnt/local/lib -lak
+	@$(CC) -o $@ $^ $(LDFLAGS) $(LDLIBS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
