@@ -13,7 +13,7 @@ CFLAGS	+= -I/usr/local/include
 CFLAGS	+= -I/usr/include
 
 # LDFLAGS += -L/usr/local/lib
-# LDLIBS  += -lraylib
+# LDFLAGS  += -lraylib
 # LDFLAGS += -L/usr/include
 
 
@@ -26,7 +26,7 @@ $(EXAMPLE_DIR)/%.o: %.c
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(OBJ_DIR)/$(NAME_STATIC_MODULE) /usr/local/lib/libraylib.a $(CFLAGS) $(LDFLAGS) 
+	@$(CC) -o $@ $^ $(OBJ_DIR)/$(NAME_STATIC_MODULE) -L/usr/local/lib -lraylib $(CFLAGS) $(LDFLAGS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
