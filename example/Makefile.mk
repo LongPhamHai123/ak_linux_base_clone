@@ -26,7 +26,7 @@ $(EXAMPLE_DIR)/%.o: %.c
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(OBJ_DIR)/$(NAME_STATIC_MODULE) /usr/local/lib/libraylib.a $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CC) -o $@ $^ $(OBJ_DIR)/$(NAME_STATIC_MODULE) /usr/local/lib/libraylib.a $(CFLAGS) $(LDFLAGS) 
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
