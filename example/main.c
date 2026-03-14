@@ -1,13 +1,11 @@
 #include "main.h"
 #include "raylib.h"
 int main() {
-	ak_init_tasks(AK_TASK_LIST_LEN, task_list_init);
+	// ak_init_tasks(AK_TASK_LIST_LEN, task_list_init);
 
-    ak_start_all_tasks();
+    // ak_start_all_tasks();
 
-    ak_stop_all_tasks();
-
-    
+    // ak_stop_all_tasks();
 
     InitWindow(800, 450, "raylib [core] example - basic window");
 
@@ -20,7 +18,7 @@ int main() {
     }
 
     CloseWindow();
-    
+
 	return 0;
 }
 
