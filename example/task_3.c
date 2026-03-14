@@ -10,7 +10,7 @@ void* gw_task_app3_entry(void) {
 	ak_msg_t* msg;
 
 	// timer_set(GW_TASK_APP_2, 0, 1000, TIMER_PERIODIC);
- const int screenWidth = 800;
+    const int screenWidth = 800;
     const int screenHeight = 450;
 
     InitWindow(screenWidth, screenHeight, "Simple 2D Game");
