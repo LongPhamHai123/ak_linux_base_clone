@@ -20,7 +20,7 @@ $(EXAMPLE_DIR)/%.o: %.c
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CC) -o $@ $^ -L/mnt/local/lib -lak
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
