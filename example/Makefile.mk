@@ -16,7 +16,9 @@ CFLAGS	+= -I/usr/include
 LDFLAGS += -L/usr/local/lib
 LDFLAGS  += -lraylib \
 			-lm \
-			-lX11
+			-lX11 \
+			-lGL \
+			-ldl
 
 
 # LDFLAGS += -L/usr/local/lib
