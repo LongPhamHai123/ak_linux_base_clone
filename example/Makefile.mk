@@ -9,11 +9,13 @@ OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_2.o 
 
 
-# CFLAGS	+= -I/usr/local/include
+CFLAGS	+= -I/usr/local/include
 CFLAGS	+= -I/usr/include
 
-# LDFLAGS += -L/usr/local/lib
-LDFLAGS += -L/usr/include
+LDFLAGS += -L/usr/local/lib
+LDLIBS  += -lraylib
+# LDFLAGS += -L/usr/include
+
 
 all: $(NAME_MODULE)
 
@@ -24,7 +26,7 @@ $(EXAMPLE_DIR)/%.o: %.c
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(OBJ_DIR)/$(NAME_STATIC_MODULE) $(CFLAGS) $(LDFLAGS)
+	@$(CC) -o $@ $^ $(OBJ_DIR)/$(NAME_STATIC_MODULE) $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
