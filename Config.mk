@@ -16,6 +16,6 @@ EXAMPLE_DIR = example
 SRC_DIR = src
 
 # input FLAGS
-LDFLAGS += -lpthread -lrt
+LDFLAGS += -lpthread -lrt -lm
 CFLAGS += -I./ -std=$(STD) -fPIC -finline-functions -w -pipe -fPIC -fwrapv -fdata-sections -ffunction-sections -O2
 LDLIBS += -shared -Wl,-soname,$(NAME_SHARED_MODULE).$(VERSION)
