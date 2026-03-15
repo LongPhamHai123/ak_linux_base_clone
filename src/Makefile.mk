@@ -12,7 +12,7 @@ OBJ += $(OBJ_DIR)/timer.o
 OBJ += $(OBJ_DIR)/fsm.o
 OBJ += $(OBJ_DIR)/tsm.o
 OBJ += $(OBJ_DIR)/sys_dbg.o
-# LDLIBS = -shared -Wl,-soname,$(NAME_SHARED_MODULE).$(VERSION)
+LDLIBS = -shared -Wl,-soname,$(NAME_SHARED_MODULE).$(VERSION)
 all: $(OBJ_DIR)/$(NAME_SHARED_MODULE).$(VERSION) $(OBJ_DIR)/$(NAME_STATIC_MODULE)
 
 $(OBJ_DIR)/%.o: %.c

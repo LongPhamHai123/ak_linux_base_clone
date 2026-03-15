@@ -18,11 +18,13 @@ CFLAGS	+= -I/usr/include
 
 LDFLAGS += -L/mnt/local/lib
 LDFLAGS += -L/usr/local/lib
-LDFLAGS  += -lraylib \
+LDFLAGS  += -lak \
+			-lraylib \
 			-lm \
 			-lX11 \
 			-lGL \
-			-ldl
+			-ldl \
+			
 
 
 # LDFLAGS += -L/usr/local/lib

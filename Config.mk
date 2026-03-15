@@ -18,4 +18,4 @@ SRC_DIR = src
 # input FLAGS
 LDFLAGS += -lpthread -lrt
 CFLAGS += -I./ -std=$(STD) -fPIC -finline-functions -w -pipe -fPIC -fwrapv -fdata-sections -ffunction-sections -O2
-LDLIBS += -shared -Wl,-soname,$(NAME_SHARED_MODULE).$(VERSION)
+# LDLIBS += -shared -Wl,-soname,$(NAME_SHARED_MODULE).$(VERSION)
