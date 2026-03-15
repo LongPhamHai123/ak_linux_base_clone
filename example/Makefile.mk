@@ -9,8 +9,9 @@ OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_2.o  \
 		$(EXAMPLE_DIR)/task_3.o
 
-CXXFLAGS  += -I./$(EXAMPLE_DIR)
-CXXFLAGS  += -I/mnt/local/include
+CXXFLAGS  	+= -I./$(EXAMPLE_DIR)
+CXXFLAGS  	+= -I./src          # <-- ADDED: allow #include "ak/ak.h" from src/
+CXXFLAGS  	+= -I/mnt/local/include
 CXXFLAGS	+= -I/usr/local/include
 CXXFLAGS	+= -I/usr/include
 
