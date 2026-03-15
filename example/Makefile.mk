@@ -16,7 +16,7 @@ CFLAGS	+= -I/usr/include
 
 
 
-LDFLAGS += -L/mnt/local/lib
+LDFLAGS += -L/mnt/local/lib -Wl
 LDFLAGS += -L/usr/local/lib
 LDLIBS  += -lak \
 			-lraylib \
