@@ -12,7 +12,7 @@ OBJ += $(OBJ_DIR)/timer.o
 OBJ += $(OBJ_DIR)/fsm.o
 OBJ += $(OBJ_DIR)/tsm.o
 OBJ += $(OBJ_DIR)/sys_dbg.o
-
+LDLIBS = -shared -Wl,-soname,$(NAME_SHARED_MODULE).$(VERSION)
 all: $(OBJ_DIR)/$(NAME_SHARED_MODULE).$(VERSION) $(OBJ_DIR)/$(NAME_STATIC_MODULE)
 
 $(OBJ_DIR)/%.o: %.c
@@ -20,12 +20,12 @@ $(OBJ_DIR)/%.o: %.c
 	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS)
 
 $(OBJ_DIR)/$(NAME_SHARED_MODULE).$(VERSION): $(OBJ)
-	@echo ---------- START BUILD STATIC LIBRARY ----------
+	@echo ---------- START BUILD SHARED LIBRARY ----------
 	@echo CC 	$^ -o $@
 	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 
 $(OBJ_DIR)/$(NAME_STATIC_MODULE): $(OBJ)
-	@echo ---------- START BUILD SHARED LIBRARY ----------
+	@echo ---------- START BUILD STATIC LIBRARY ----------
 	@echo AR 	$^ rcs $@ 
 	@$(AR) rcs $@ $^
 
