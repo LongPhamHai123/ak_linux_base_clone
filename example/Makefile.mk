@@ -18,12 +18,14 @@ CFLAGS	+= -I/usr/include
 
 LDFLAGS += -L/mnt/local/lib
 LDFLAGS += -L/usr/local/lib
-LDLIBS  += -lak \
+LDFLAGS  += -lak \
 			-lraylib \
 			-lm \
 			-lX11 \
 			-lGL \
 			-ldl \
+			-lpthread \
+			-lrt
 			
 
 
@@ -36,12 +38,12 @@ all: $(NAME_MODULE)
 
 $(EXAMPLE_DIR)/%.o: %.c
 	@echo CC 	$<
-	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS)
 
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
