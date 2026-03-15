@@ -9,7 +9,7 @@ OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_2.o  \
 		$(EXAMPLE_DIR)/task_3.o
 
-CFLAGS += -I./
+CFLAGS += -I./$(EXAMPLE_DIR)
 CFLAGS  += -I/mnt/local/include
 CFLAGS	+= -I/usr/local/include
 CFLAGS	+= -I/usr/include
