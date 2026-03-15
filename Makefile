@@ -6,9 +6,9 @@ create:
 	@echo mkdir -p $(OBJ_DIR)
 	@mkdir -p $(OBJ_DIR)
 
-.PHONY: build_lib
-build_lib:
-	@make -f $(SRC_DIR)/Makefile.mk all
+# .PHONY: build_lib
+# build_lib:
+# 	@make -f $(SRC_DIR)/Makefile.mk all
 
 .PHONY: example
 example:
