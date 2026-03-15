@@ -1,6 +1,6 @@
 -include Config.mk
 
-all: create build_lib example
+all: create example
 
 create:
 	@echo mkdir -p $(OBJ_DIR)
