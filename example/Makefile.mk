@@ -9,13 +9,14 @@ OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_2.o  \
 		$(EXAMPLE_DIR)/task_3.o
 
-
+CFLAGS += -I./
+CFLAGS  += -I/mnt/local/include
 CFLAGS	+= -I/usr/local/include
 CFLAGS	+= -I/usr/include
-CFLAGS  += -I$(PREFIX)/include
 
 
-LDFLAGS += -L$(PREFIX)/lib
+
+LDFLAGS += -L/mnt/local/lib
 LDFLAGS += -L/usr/local/lib
 LDFLAGS  += -lraylib \
 			-lm \
