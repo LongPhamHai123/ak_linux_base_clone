@@ -9,12 +9,12 @@ OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_2.o  \
 		$(EXAMPLE_DIR)/task_3.o
 
-CFLAGS  += -I./$(EXAMPLE_DIR)
-CFLAGS  += -I/mnt/local/include
-CFLAGS	+= -I/usr/local/include
-CFLAGS	+= -I/usr/include
+CXXFLAGS  += -I./$(EXAMPLE_DIR)
+CXXFLAGS  += -I/mnt/local/include
+CXXFLAGS	+= -I/usr/local/include
+CXXFLAGS	+= -I/usr/include
 
-CXXFLAGS += CFLAGS
+# CXXFLAGS += CFLAGS
 
 LDFLAGS += -L/mnt/local/lib
 LDFLAGS += -L/usr/local/lib
@@ -38,7 +38,7 @@ all: $(NAME_MODULE)
 
 $(EXAMPLE_DIR)/%.o: %.c
 	@echo CC 	$<
-	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CC) -c -o $@ $< $(CXXFLAGS) $(LDFLAGS) $(LDLIBS)
 
 $(EXAMPLE_DIR)/%.o: %.cpp
 	@echo CC 	$<

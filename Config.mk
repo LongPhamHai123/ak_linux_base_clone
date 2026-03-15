@@ -17,5 +17,17 @@ SRC_DIR = src
 
 # input FLAGS
 LDFLAGS += -lpthread -lrt
-CFLAGS += -I./ -std=$(STD) -fPIC -finline-functions -w -pipe -fPIC -fwrapv -fdata-sections -ffunction-sections -O2
+# CFLAGS += -I./ -std=$(STD) -fPIC -finline-functions -w -pipe -fPIC -fwrapv -fdata-sections -ffunction-sections -O2
+# CFFLAGS += -I./ -std=$(STD) -fPIC -finline-functions -w -pipe -fwrapv -fdata-sections -ffunction-sections -O2
+
+OPTIMIZE_OPTION	+=	-g -O3
+WARNNING_OPTION	+=	-Werror -W -Wno-missing-field-initializers
+
+CXXFLAGS	+=	$(OPTIMIZE_OPTION)	\
+			$(WARNNING_OPTION)	\
+			-std=c++11		\
+			-Wall			\
+			-Winline		\
+			-pipe			\
+			-g			\
 # LDLIBS += -shared -Wl,-soname,$(NAME_SHARED_MODULE).$(VERSION)
