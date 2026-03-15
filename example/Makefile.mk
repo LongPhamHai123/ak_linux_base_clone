@@ -18,7 +18,7 @@ CFLAGS	+= -I/usr/include
 
 LDFLAGS += -L/mnt/local/lib
 LDFLAGS += -L/usr/local/lib
-LDFLAGS  += -lak \
+LDLIBS  += -lak \
 			-lraylib \
 			-lm \
 			-lX11 \
@@ -41,7 +41,7 @@ $(EXAMPLE_DIR)/%.o: %.c
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
+	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
