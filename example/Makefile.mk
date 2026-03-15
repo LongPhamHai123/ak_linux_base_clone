@@ -40,12 +40,19 @@ $(EXAMPLE_DIR)/%.o: %.c
 	@echo CC 	$<
 	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 
+$(EXAMPLE_DIR)/%.o: %.cpp
+	@echo CC 	$<
+	@$(CXX) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CXX) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
 	@rm -rf $(OBJ)
 	@rm -rf $(NAME_MODULE)
+
+
+# LD_LIBRARY_PATH=/mnt/local/lib ./example/example

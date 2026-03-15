@@ -3,7 +3,7 @@ CROSS_PREFIX =
 PREFIX = /mnt/local
 CC = $(CROSS_PREFIX)gcc
 AR = $(CROSS_PREFIX)ar
-
+CXX = $(CROSS_PREFIX)g++
 # input version compiler
 VERSION = 1
 STD = gnu99
