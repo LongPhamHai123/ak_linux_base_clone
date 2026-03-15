@@ -2,8 +2,8 @@
 
 NAME_SHARED_MODULE = libak.so
 NAME_STATIC_MODULE = libak.a
-CFLAGS	+= -I./$(SRC_DIR)
-
+# CFLAGS	+= -I./$(SRC_DIR)
+CXXFLAGS += -I./$(SRC_DIR)
 VPATH += ./$(SRC_DIR)
 
 OBJ += $(OBJ_DIR)/ak.o
@@ -17,12 +17,12 @@ all: $(OBJ_DIR)/$(NAME_SHARED_MODULE).$(VERSION) $(OBJ_DIR)/$(NAME_STATIC_MODULE
 
 $(OBJ_DIR)/%.o: %.c
 	@echo CC 	$<
-	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS)
+	@$(CC) -c -o $@ $< $(CXXFLAGS) $(LDFLAGS)
 
 $(OBJ_DIR)/$(NAME_SHARED_MODULE).$(VERSION): $(OBJ)
 	@echo ---------- START BUILD SHARED LIBRARY ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CC) -o $@ $^ $(CXXFLAGS) $(LDFLAGS) $(LDLIBS)
 
 $(OBJ_DIR)/$(NAME_STATIC_MODULE): $(OBJ)
 	@echo ---------- START BUILD STATIC LIBRARY ----------
