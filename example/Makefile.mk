@@ -42,7 +42,7 @@ $(EXAMPLE_DIR)/%.o: %.c
 
 $(EXAMPLE_DIR)/%.o: %.cpp
 	@echo CC 	$<
-	@$(CXX) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CXX) -c -o $@ $< $(CXXFLAGS) $(LDFLAGS) $(LDLIBS)
 
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
