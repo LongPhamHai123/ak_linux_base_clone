@@ -47,7 +47,7 @@ $(EXAMPLE_DIR)/%.o: %.cpp
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CXX) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
