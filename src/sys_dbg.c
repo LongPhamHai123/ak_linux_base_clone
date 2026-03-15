@@ -2,7 +2,7 @@
 #include <time.h>
 #include <sys/time.h>
 
-#include "ak/ak.h"
+#include "ak.h"
 
 #include "ak/sys_dbg.h"
 

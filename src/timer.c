@@ -14,7 +14,7 @@
 #include <sys/time.h>
 #include <time.h>
 
-#include "ak/ak.h"
+#include "ak.h"
 #include "ak/ak_dbg.h"
 #include "ak/timer.h"
 #include "ak/sys_dbg.h"

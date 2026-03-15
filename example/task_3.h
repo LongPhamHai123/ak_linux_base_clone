@@ -6,7 +6,7 @@
 extern "C" 
 {
 #endif
-#include "ak/ak.h"
+#include "ak.h"
 #include "task_list.h"
 extern void* gw_task_app3_entry(void);
 extern q_msg_t gw_task_app3_mailbox;

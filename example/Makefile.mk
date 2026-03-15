@@ -1,16 +1,15 @@
 -include Config.mk
 
 NAME_MODULE = $(EXAMPLE_DIR)/example
-NAME_STATIC_MODULE = libak.a
+# NAME_STATIC_MODULE = libak.a
 
 OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_list.o \
 		$(EXAMPLE_DIR)/task_1.o \
 		$(EXAMPLE_DIR)/task_2.o  \
 		$(EXAMPLE_DIR)/task_3.o
-
+CXXFLAGS	+= -I./ak
 CXXFLAGS  	+= -I./$(EXAMPLE_DIR)
-CXXFLAGS  	+= -I./src          # <-- ADDED: allow #include "ak/ak.h" from src/
 CXXFLAGS  	+= -I/mnt/local/include
 CXXFLAGS	+= -I/usr/local/include
 CXXFLAGS	+= -I/usr/include

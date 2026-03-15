@@ -15,7 +15,7 @@
 #include <sys/types.h>
 #include <limits.h>
 
-#include "ak/ak.h"
+#include "ak.h"
 #include "ak/ak_dbg.h"
 #include "ak/message.h"
 #include "ak/sys_dbg.h"
