@@ -12,8 +12,10 @@ OBJ += 	$(EXAMPLE_DIR)/main.o \
 
 CFLAGS	+= -I/usr/local/include
 CFLAGS	+= -I/usr/include
+CFLAGS  += -I$(PREFIX)/include
 
 
+LDFLAGS += -L$(PREFIX)/lib
 LDFLAGS += -L/usr/local/lib
 LDFLAGS  += -lraylib \
 			-lm \
@@ -36,7 +38,7 @@ $(EXAMPLE_DIR)/%.o: %.c
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CC) -o $@ $^ $(OBJ_DIR)/$(NAME_STATIC_MODULE) $(CFLAGS) $(LDFLAGS)
+	@$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
