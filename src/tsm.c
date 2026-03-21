@@ -5,7 +5,7 @@
  ******************************************************************************
 **/
 
-#include "ak.h"
+#include "ak/ak.h"
 #include "ak/message.h"
 #include "ak/sys_dbg.h"
 

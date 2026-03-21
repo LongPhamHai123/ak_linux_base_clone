@@ -5,7 +5,7 @@
  ******************************************************************************
 **/
 
-#include "ak.h"
+#include "ak/ak.h"
 #include "ak/message.h"
 
 void fsm_dispatch(fsm_t* me, ak_msg_t* msg) {
