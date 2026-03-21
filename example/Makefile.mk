@@ -8,11 +8,11 @@ OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_1.o \
 		$(EXAMPLE_DIR)/task_2.o  \
 		$(EXAMPLE_DIR)/task_3.o
-CXXFLAGS	+= -I./ak
-CXXFLAGS  	+= -I./$(EXAMPLE_DIR)
-CXXFLAGS  	+= -I/mnt/local/include
-CXXFLAGS	+= -I/usr/local/include
-CXXFLAGS	+= -I/usr/include
+# CXXFLAGS	+= -I./ak
+CFLAGS  	+= -I./$(EXAMPLE_DIR)
+CFLAGS  	+= -I/mnt/local/include
+CFLAGS	+= -I/usr/local/include
+CFLAGS	+= -I/usr/include
 
 # CXXFLAGS += CFLAGS
 
@@ -38,16 +38,16 @@ all: $(NAME_MODULE)
 
 $(EXAMPLE_DIR)/%.o: %.c
 	@echo CC 	$<
-	@$(CC) -c -o $@ $< $(CXXFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 
 $(EXAMPLE_DIR)/%.o: %.cpp
 	@echo CC 	$<
-	@$(CXX) -c -o $@ $< $(CXXFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CXX) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
-	@$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS) $(LDLIBS)
+	@$(CXX) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 	
 clean:
 	@echo rm -rf $(EXAMPLE_DIR)/$(OBJ)
