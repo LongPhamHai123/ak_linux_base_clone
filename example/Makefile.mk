@@ -56,6 +56,11 @@ $(OBJ_DIR)/%.o: $(EXAMPLE_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) -c $< -o $@ $(CFLAGS)
 
+$(OBJ_DIR)/%.o: %.c
+	@echo CC $<
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $< -o $@ $(CFLAGS)
+
 # $(OBJ_DIR)/%o: %c
 # 	@echo CC 	$<
 # 	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)	
