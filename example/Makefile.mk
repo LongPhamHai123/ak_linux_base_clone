@@ -19,9 +19,11 @@ SRC += $(EXAMPLE_DIR)/main.c \
        $(EXAMPLE_DIR)/task_3.c \
        $(EXAMPLE_DIR)/if_console.c \
        $(EXAMPLE_DIR)/task_console.c \
-       $(EXAMPLE_DIR)/shell.c
+       $(EXAMPLE_DIR)/shell.c \
+	   common/cmd_line.c
 
-OBJ := $(patsubst $(EXAMPLE_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
+# OBJ := $(patsubst $(EXAMPLE_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
+OBJ := $(patsubst %.c,$(OBJ_DIR)/%.o,$(notdir $(SRC)))
 
 # CXXFLAGS	+= -I./ak
 CFLAGS  	+= -I./example
@@ -56,7 +58,7 @@ $(OBJ_DIR)/%.o: $(EXAMPLE_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) -c $< -o $@ $(CFLAGS)
 
-$(OBJ_DIR)/%.o: %.c
+$(OBJ_DIR)/%.o: common/%.c
 	@echo CC $<
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) -c $< -o $@ $(CFLAGS)
