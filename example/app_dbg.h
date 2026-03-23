@@ -12,4 +12,10 @@
 #define APP_PRINT(fmt, ...)		printf(fmt, ##__VA_ARGS__)
 #endif
 
+#if (APP_DBG_EN == 1)
+#define APP_DBG(fmt, ...)		__LOG__(fmt, "APP_DBG", ##__VA_ARGS__)
+#else
+#define APP_DBG(fmt, ...)
+#endif
+
 #endif //
