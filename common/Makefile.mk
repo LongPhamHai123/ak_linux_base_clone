@@ -1,5 +1,5 @@
 -include Config.mk
 CFLAGS	+= -I./common
 VPATH += ./common
-OBJ += $(EXAMPLE_DIR)/cmd_line.o
+OBJ += $(OBJ_DIR)/cmd_line.o
 
