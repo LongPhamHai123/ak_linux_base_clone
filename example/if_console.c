@@ -8,7 +8,7 @@
 
 #include "app.h"
 // #include "app_if.h"
-// #include "app_dbg.h"
+#include "app_dbg.h"
 
 #include "if_console.h"
 #include "task_list.h"

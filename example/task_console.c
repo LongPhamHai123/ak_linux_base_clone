@@ -6,14 +6,14 @@
 
 #include "ak/ak.h"
 #include "ak/timer.h"
-#include "ak/sys_dbg.h"
+
 
 #include "cmd_line.h"
 // #include "base64.h"
 
 #include "app.h"
 // #include "app_if.h"
-// #include "app_dbg.h"
+#include "app_dbg.h"
 // #include "app_config.h"
 #include "shell.h"
 
