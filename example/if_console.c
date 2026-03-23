@@ -29,7 +29,7 @@ void* gw_task_if_console_entry(void*) {
 	while (1) {
 		if (i_get_command(cmd_buf) == 0) {
 
-			task_post_dynamic_msg(GW_TASK_IF_CONSOLE_ID, GW_TASK_CONSOLE_ID, GW_CONSOLE_INTERNAL_LOGIN_CMD, cmd_buf, strlen((const char*)cmd_buf));
+			task_post_dynamic_msg(GW_TASK_CONSOLE_ID, GW_CONSOLE_INTERNAL_LOGIN_CMD, cmd_buf, strlen((const char*)cmd_buf));
 
 			/* clean command buffer */
 			memset(cmd_buf, 0, CMD_BUFFER_SIZE);
