@@ -2,7 +2,7 @@
 #define __APP_DBG_H__
 
 #include <stdio.h>
-#include "sys_dbg.h"
+#include "ak/sys_dbg.h"
 
 #define APP_DBG_EN			1
 #define APP_PRINT_EN		1
