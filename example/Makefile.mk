@@ -1,5 +1,5 @@
 -include Config.mk
-
+include common/Makefile.mk
 NAME_MODULE = $(EXAMPLE_DIR)/example
 # NAME_STATIC_MODULE = libak.a
 
@@ -7,9 +7,12 @@ OBJ += 	$(EXAMPLE_DIR)/main.o \
 		$(EXAMPLE_DIR)/task_list.o \
 		$(EXAMPLE_DIR)/task_1.o \
 		$(EXAMPLE_DIR)/task_2.o  \
-		$(EXAMPLE_DIR)/task_3.o
+		$(EXAMPLE_DIR)/task_3.o \
+		$(EXAMPLE_DIR)/if_console.o \
+		$(EXAMPLE_DIR)/task_console.o \
+		$(EXAMPLE_DIR)/shell.o
 # CXXFLAGS	+= -I./ak
-# CFLAGS  	+= -I./$(EXAMPLE_DIR)
+CFLAGS  	+= -I./example
 CFLAGS  	+= -I/mnt/local/include
 CFLAGS	+= -I/usr/local/include
 CFLAGS	+= -I/usr/include
