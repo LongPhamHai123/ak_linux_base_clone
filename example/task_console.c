@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "ak.h"
+#include "ak/ak.h"
 #include "timer.h"
 
 #include "cmd_line.h"
