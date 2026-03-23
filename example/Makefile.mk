@@ -1,5 +1,5 @@
 -include Config.mk
-# include common/Makefile.mk
+include common/Makefile.mk
 NAME_MODULE = $(EXAMPLE_DIR)/example
 # NAME_STATIC_MODULE = libak.a
 
