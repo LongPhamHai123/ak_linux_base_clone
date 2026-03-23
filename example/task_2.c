@@ -9,7 +9,7 @@ void* gw_task_app2_entry(void) {
 
 	ak_msg_t* msg;
 
-	timer_set(GW_TASK_APP_2, 0, 1000, TIMER_PERIODIC);
+	// timer_set(GW_TASK_APP_2, 0, 1000, TIMER_PERIODIC);
 
 	while (1) {
 		/* get messge */
