@@ -43,6 +43,10 @@ $(EXAMPLE_DIR)/%.o: %.c
 	@echo CC 	$<
 	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 
+$(OBJ_DIR)/%o: %c
+	@echo CC 	$<
+	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)	
+
 $(NAME_MODULE): $(OBJ)
 	@echo ---------- START LINK EXAMPLE ----------
 	@echo CC 	$^ -o $@
