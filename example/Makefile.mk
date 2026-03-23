@@ -3,14 +3,26 @@ include common/Makefile.mk
 NAME_MODULE = $(EXAMPLE_DIR)/example
 # NAME_STATIC_MODULE = libak.a
 
-OBJ += 	$(EXAMPLE_DIR)/main.o \
-		$(EXAMPLE_DIR)/task_list.o \
-		$(EXAMPLE_DIR)/task_1.o \
-		$(EXAMPLE_DIR)/task_2.o  \
-		$(EXAMPLE_DIR)/task_3.o \
-		$(EXAMPLE_DIR)/if_console.o \
-		$(EXAMPLE_DIR)/task_console.o \
-		$(EXAMPLE_DIR)/shell.o
+# OBJ += 	$(EXAMPLE_DIR)/main.o \
+# 		$(EXAMPLE_DIR)/task_list.o \
+# 		$(EXAMPLE_DIR)/task_1.o \
+# 		$(EXAMPLE_DIR)/task_2.o  \
+# 		$(EXAMPLE_DIR)/task_3.o \
+# 		$(EXAMPLE_DIR)/if_console.o \
+# 		$(EXAMPLE_DIR)/task_console.o \
+# 		$(EXAMPLE_DIR)/shell.o
+
+SRC += $(EXAMPLE_DIR)/main.c \
+       $(EXAMPLE_DIR)/task_list.c \
+       $(EXAMPLE_DIR)/task_1.c \
+       $(EXAMPLE_DIR)/task_2.c \
+       $(EXAMPLE_DIR)/task_3.c \
+       $(EXAMPLE_DIR)/if_console.c \
+       $(EXAMPLE_DIR)/task_console.c \
+       $(EXAMPLE_DIR)/shell.c
+
+OBJ := $(patsubst $(EXAMPLE_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
+
 # CXXFLAGS	+= -I./ak
 CFLAGS  	+= -I./example
 CFLAGS  	+= -I/mnt/local/include
@@ -39,7 +51,7 @@ LDLIBS  +=  -lak \
 
 all: $(NAME_MODULE)
 
-$(EXAMPLE_DIR)/%.o: %.c
+$(OBJ_DIR)/%.o: $(EXAMPLE_DIR)%.c
 	@echo CC 	$<
 	@$(CC) -c -o $@ $< $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 
