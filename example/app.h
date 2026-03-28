@@ -3,6 +3,7 @@
 #include "ak/ak.h"
 enum {
 	GW_CONSOLE_INTERNAL_LOGIN_CMD = AK_USER_DEFINE_SIG,
+	GW_CONSOLE_INTERNAL_PUT_CMD
 };
 
 #endif

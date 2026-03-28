@@ -72,7 +72,16 @@ void* gw_task_console_entry(void) {
 			memset(cls_cmd_buffer, 0, CMD_BUFFER_SIZE);
 		}
 			break;
-
+		case GW_CONSOLE_INTERNAL_PUT_CMD: {
+			get_data_dynamic_msg(msg, cls_cmd_buffer, msg->header->len);
+			APP_PRINT("PUT CMD: %s\n", cls_cmd_buffer);
+			switch(cmd_line_parser(lgn_cmd_table, cls_cmd_buffer)) {
+				case CMD_SUCCESS:
+					break;
+			}
+			memset(cls_cmd_buffer, 0, CMD_BUFFER_SIZE);
+		}
+			break;
 		default:
 			break;
 		}

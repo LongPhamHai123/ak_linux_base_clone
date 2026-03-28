@@ -8,6 +8,7 @@
 #include "task_3.h"
 #include "if_console.h"
 #include "task_console.h"
+#include "if_put_console.h"
 enum {
 	/* SYSTEM TASKS */
 	DEFAULT_AK_FIRST_TASK = AK_TASK_TIMER_ID,
@@ -18,6 +19,7 @@ enum {
 	GW_TASK_APP_3,
 	GW_TASK_IF_CONSOLE_ID,
 	GW_TASK_CONSOLE_ID,
+	GW_TASK_IF_PUT_CONSOLE_ID,
 	/* EOT task ID */
 	AK_TASK_LIST_LEN,
 };
