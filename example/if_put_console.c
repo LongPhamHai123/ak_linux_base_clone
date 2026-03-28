@@ -37,7 +37,7 @@ void* gw_task_if_put_console_entry(void) {
 		// 	memset(cmd_buf, 0, CMD_BUFFER_SIZE);
 		// }
         
-		usleep(5000);
+		sleep(5);
 	}
 	return (void*)0;
 }
