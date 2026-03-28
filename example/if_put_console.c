@@ -16,7 +16,7 @@
 // #include "task_if.h"
 
 
-q_msg_t gw_task_if_console_mailbox;
+q_msg_t gw_task_if_put_console_mailbox;
 
 static unsigned char cmd_buf[CMD_BUFFER_SIZE];
 static int i_get_command(unsigned char* cmd_buf);
