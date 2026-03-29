@@ -20,10 +20,9 @@ void* gw_cmd_task(void) {
 	wait_all_tasks_started();
 
 	APP_DBG("[STARTED] gw_cmd_task\n");
-    // execl("/bin/ls", "ls", NULL);
+    execl("/bin/ls", "ls", NULL);
     // return 0;
-	while (1) {
-        execl("/bin/ls", "ls", NULL);
+	while (1) {        
         APP_DBG("cmd task running with thread id: %d\n", get_task_id());
         sleep(5);
 	}
