@@ -20,7 +20,8 @@ SRC += $(EXAMPLE_DIR)/main.c \
        $(EXAMPLE_DIR)/if_console.c \
        $(EXAMPLE_DIR)/task_console.c \
        $(EXAMPLE_DIR)/shell.c \
-	   $(EXAMPLE_DIR)/if_put_console.c 
+	   $(EXAMPLE_DIR)/if_put_console.c  \
+	   $(EXAMPLE_DIR)/cmd.c
 # 	   $(EXAMPLE_DIR)/cmd_line.c
 # 	   common/cmd_line.c
 
