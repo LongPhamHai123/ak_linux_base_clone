@@ -20,18 +20,12 @@ void* gw_cmd_task(void) {
 	wait_all_tasks_started();
 
 	APP_DBG("[STARTED] gw_cmd_task\n");
-    pid_t pid = fork();
-
-    if (pid == 0) {
-        // Child process
+    // execl("/bin/ls", "ls", NULL);
+    // return 0;
+	while (1) {
         execl("/bin/ls", "ls", NULL);
-    } else {
-        // Parent process
-        wait(NULL);
-        APP_DBG("Done\n");
-    }
-	// while (1) {
-
-	// }
+        APP_DBG("cmd task running with thread id: %d\n", get_task_id());
+        sleep(5);
+	}
 	return (void*)0;
 }
