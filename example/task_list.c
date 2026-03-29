@@ -11,4 +11,6 @@ ak_task_t task_list_init[] = {
 	{	GW_TASK_IF_CONSOLE_ID,	TASK_PRI_LEVEL_1,	gw_task_if_console_entry	,	&gw_task_if_console_mailbox,	"Receive cmd"			},
 	{	GW_TASK_CONSOLE_ID,	TASK_PRI_LEVEL_1,	gw_task_console_entry	,	&gw_task_console_mailbox,	"Handle cmd"			},
 	{	GW_TASK_IF_PUT_CONSOLE_ID,	TASK_PRI_LEVEL_7,	gw_task_if_put_console_entry	,	&gw_task_if_put_console_mailbox,	"Put cmd"			},
+
+	{	GW_TASK_CMD_ID,	TASK_PRI_LEVEL_1,	gw_cmd_task	,	&gw_task_cmd_mailbox,	"cmd task"			},
 };

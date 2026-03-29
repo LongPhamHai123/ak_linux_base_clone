@@ -24,7 +24,7 @@ static int i_get_command(unsigned char* cmd_buf);
 void* gw_task_if_put_console_entry(void) {
 	wait_all_tasks_started();
 
-	APP_DBG("[STARTED] gw_task_if_console_entry\n");
+	APP_DBG("[STARTED] gw_task_if_put_console_entry\n");
     const char* ver = "ver";
 	while (1) {
         // puts(ver);

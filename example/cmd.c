@@ -1,0 +1,37 @@
+
+#include <unistd.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "ak/ak.h"
+
+#include "app.h"
+// #include "app_if.h"
+#include "app_dbg.h"
+
+#include "cmd.h"
+#include "task_list.h"
+
+#include <sys/wait.h>
+q_msg_t gw_task_cmd_mailbox;
+void* gw_cmd_task(void) {
+	wait_all_tasks_started();
+
+	APP_DBG("[STARTED] gw_cmd_task\n");
+    pid_t pid = fork();
+
+    if (pid == 0) {
+        // Child process
+        execl("/bin/ls", "ls", NULL);
+    } else {
+        // Parent process
+        wait(NULL);
+        APP_DBG("Done\n");
+    }
+	// while (1) {
+
+	// }
+	return (void*)0;
+}
